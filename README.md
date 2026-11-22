@@ -1,5 +1,5 @@
 # Codex Session Analysis Skill
-
+`r`n[English](README.md) | [简体中文](README.zh-CN.md)`r`n
 A reproducible, LLM-optional toolkit for analyzing Codex and other agent conversation logs.
 
 It parses JSONL session events, counts user and agent messages, tool calls, and network calls, removes injected platform context, produces a numbered prompt catalog, and records source hashes for auditability.
@@ -58,3 +58,4 @@ The parser does not claim to infer intent or quality. Those interpretations requ
 ## License
 
 MIT. See `LICENSE`.
+
