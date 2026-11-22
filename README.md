@@ -53,6 +53,10 @@ The host Agent can then use the contract in `SKILL.md` to locate a source, freez
 - `analyze_jsonl.py` — dependency-free deterministic JSONL statistics and prompt-catalog CLI.
 - `examples/` — small sanitized fixtures for local testing.
 
+## Case study
+
+The [Event-B session case study](examples/eventb-session/README.md) contains sanitized Markdown and JSON reports plus a truncated prompt catalog. It shows a 61-prompt session progressing through Event-B training, Rodin proof work, refinement, ProB counterexamples, and Skill formalization.
+
 ## Scope and limitations
 
 The parser does not claim to infer intent or quality. Those interpretations require explicit rules, human review, or an optional LLM layer. It never modifies the source log. Network-call counts are lower bounds when a wrapper hides the inner tool name.
