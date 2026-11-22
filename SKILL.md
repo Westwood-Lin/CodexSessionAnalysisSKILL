@@ -164,10 +164,10 @@ agent：116 条消息，其中 final answer 55 条、commentary 61 条
 可访问 URI：
 
 - `codex://threads/<THREAD_ID>`
-- `file:///<LOCAL_PATH>>.jsonl`
-- `file:///<LOCAL_PATH>`
-- `file:///<LOCAL_PATH>`
-- `file:///<LOCAL_PATH>`
+- `file:///path/to/session.jsonl`
+- `file:///path/to/session-analysis-artifact`
+- `file:///path/to/session-analysis-artifact`
+- `file:///path/to/session-analysis-artifact`
 
 ### 5.2 UserPromptClasses
 
@@ -199,5 +199,4 @@ agent：116 条消息，其中 final answer 55 条、commentary 61 条
 - 日志可能包含密钥、个人路径、邮件或附件内容；输出前进行最小必要披露和敏感信息脱敏。
 - 不把计划制品、未完成工具调用或 agent 自述当成已经完成的结果。
 - 无法识别工具内层调用时，可统计外层调用并将工具名标为 `unresolved`，同时说明网络请求数可能低估。
-
 
