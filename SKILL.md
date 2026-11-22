@@ -13,7 +13,7 @@ description: Analyze agent conversation logs with deterministic parsing, statist
 - 用途：读取一个程序可访问的对话源，统计参与者消息、工具调用和网络请求，围绕用户提示进行主题聚类，并返回统计数据、`UserPromptClasses` 表和进一步分析。
 - 典型问题：一次长期人机协作究竟包含多少轮对话、用户围绕哪些主题提问、各主题如何随时间推进、哪些提示属于同一任务阶段。
 
-本能力以 Codex 线程 `019ff550-1d70-76c1-bce5-1d07fff371dc` 的分析过程为基准案例。案例线程可通过 `codex://threads/019ff550-1d70-76c1-bce5-1d07fff371dc` 访问。
+本能力以 Codex 线程 `<THREAD_ID>` 的分析过程为基准案例。案例线程可通过 `codex://threads/<THREAD_ID>` 访问。
 
 ## 2. 输入契约
 
@@ -29,8 +29,8 @@ description: Analyze agent conversation logs with deterministic parsing, statist
 调用示例：
 
 ```text
-invoke session_analysis codex://threads/019ff550-1d70-76c1-bce5-1d07fff371dc
-invoke session_analysis file:///C:/Users/example/session.jsonl
+invoke session_analysis codex://threads/<THREAD_ID>
+invoke session_analysis file:///path/to/session.jsonl
 invoke session_analysis https://example.org/export/conversation.jsonl
 invoke session_analysis "user: ...\nagent: ..."
 ```
@@ -149,7 +149,7 @@ score = 0.44 × TF-IDF cosine
 5. 输出保留源 URI、截止口径、计数定义、算法权重和限制；
 6. JSON、CSV 与 Markdown 中的主题数、序列和计数相互一致。
 
-## 5. 基准案例：线程 019ff550-1d70-76c1-bce5-1d07fff371dc
+## 5. 基准案例：线程 <THREAD_ID>
 
 ### 5.1 统计数据
 
@@ -163,11 +163,11 @@ agent：116 条消息，其中 final answer 55 条、commentary 61 条
 
 可访问 URI：
 
-- `codex://threads/019ff550-1d70-76c1-bce5-1d07fff371dc`
-- `file:///C:/Users/Yalin%20Feng/.codex/sessions/2026/08/12/rollout-2026-08-12T17-31-36-019ff550-1d70-76c1-bce5-1d07fff371dc.jsonl`
-- `file:///C:/Users/Yalin%20Feng/Code/PhD/FormalReq/artifact/session_anlaysis/session_analysis.md`
-- `file:///C:/Users/Yalin%20Feng/Code/PhD/FormalReq/artifact/session_anlaysis/session_analysis.json`
-- `file:///C:/Users/Yalin%20Feng/Code/PhD/FormalReq/artifact/session_anlaysis/user_prompts.csv`
+- `codex://threads/<THREAD_ID>`
+- `file:///<LOCAL_PATH>>.jsonl`
+- `file:///<LOCAL_PATH>`
+- `file:///<LOCAL_PATH>`
+- `file:///<LOCAL_PATH>`
 
 ### 5.2 UserPromptClasses
 
@@ -199,3 +199,5 @@ agent：116 条消息，其中 final answer 55 条、commentary 61 条
 - 日志可能包含密钥、个人路径、邮件或附件内容；输出前进行最小必要披露和敏感信息脱敏。
 - 不把计划制品、未完成工具调用或 agent 自述当成已经完成的结果。
 - 无法识别工具内层调用时，可统计外层调用并将工具名标为 `unresolved`，同时说明网络请求数可能低估。
+
+
