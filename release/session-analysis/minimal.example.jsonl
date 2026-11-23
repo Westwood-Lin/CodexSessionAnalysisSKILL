@@ -1,0 +1,3 @@
+{"timestamp":"2026-01-01T00:00:00Z","payload":{"type":"message","role":"user","content":[{"type":"text","text":"Analyze this session"}]}}
+{"timestamp":"2026-01-01T00:00:01Z","payload":{"type":"message","role":"assistant","phase":"final_answer","content":[{"type":"text","text":"I will analyze it."}]}}
+{"timestamp":"2026-01-01T00:00:02Z","payload":{"type":"function_call","name":"local_parser","arguments":"{}"}}

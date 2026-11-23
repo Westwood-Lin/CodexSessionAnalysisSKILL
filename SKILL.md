@@ -15,6 +15,8 @@ description: Analyze agent conversation logs with deterministic parsing, statist
 
 本能力以 Codex 线程 `<THREAD_ID>` 的分析过程为基准案例。案例线程可通过 `codex://threads/<THREAD_ID>` 访问。
 
+当前仓库已经实现统计、平台上下文过滤、提示目录和审计元数据输出。主题聚类由本 Skill 规范定义，完整的聚类 CLI 仍在补充中。使用者应以当前 CLI 的实际输出为准，不应把规范中规划的聚类结果当作已经提供的程序功能。
+
 ## 2. 输入契约
 
 ### 2.1 必需参数
